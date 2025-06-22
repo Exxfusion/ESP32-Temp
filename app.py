@@ -1,6 +1,7 @@
-from flask import Flask, request, render_template_string
-app = Flask(__name__)
+from flask import Flask, request
+import os
 
+app = Flask(__name__)
 data = {}
 
 @app.route("/api/data", methods=["POST"])
@@ -16,3 +17,7 @@ def index():
     for sensor, d in data.items():
         html += f"<p>{sensor}: {d['temp']}°C, {d['hum']}% Luftfeuchte</p>"
     return html
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
