@@ -48,7 +48,7 @@ def chart_data():
         for row in reader:
             ts = int(row["timestamp"])
             if ts >= min_time:
-                t_struct = time.localtime(ts)
+                t_struct = time.localtime(ts + 7200)
                 label = time.strftime("%H:%M", t_struct)
                 labels.append(label)
                 temps.append(float(row["temp"]))
