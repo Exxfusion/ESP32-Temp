@@ -73,8 +73,8 @@ def index():
       <h1>Waschküche Werte (aktuell)</h1>
       <p>Temp: {{temp}} °C</p>
       <p>Feuchte: {{hum}} %</p>
-      <canvas id="tempChart" width="400" height="200"></canvas>
-      <canvas id="humChart" width="400" height="200"></canvas>
+      <canvas id="tempChart" width="800" height="300"></canvas>
+      <canvas id="humChart" width="800" height="300"></canvas>
       <script>
         async function loadData() {
           const res = await fetch('/chart-data');
